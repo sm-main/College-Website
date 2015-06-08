@@ -1,0 +1,14 @@
+{% extends "department.html" %}
+
+{% block chairman-message %}
+
+    <h1>Message From Chairman</h1>
+    <img src="{{ dept_obj.cha.chairman_photo.url }}">
+    <article>
+    	<p>
+    		{{dept_obj.cha.chairman_message}}
+    		{{dept_obj.cha.chairman_name}}
+    	</p>
+    </article>
+
+{% endblock %}

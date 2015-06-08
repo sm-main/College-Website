@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <title>{{ dept_obj.department_name }}</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/jpg" href="{% static 'admin/img/ymca_logo.jpg' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/feature.css'%}">
+  <link rel="stylesheet" type="image/jpg" href="{% static 'admin/fonts/font-awesome/css/font-awesome.min.css' %}">
+   <script type="text/javascript" src="{% static 'admin/js/jquery-2.1.3.js' %}"></script>
+</head>
+<body>
+      <header id="head_box">
+           <div id="header_top">  
+              <div id="logo_box"> 
+                <div id="logo">
+                  <a href="/home"><img  src="{% static 'admin/img/trans.png' %}" height="150" width="150"></a>
+                </div> 
+              </div>
+              <nav id="nav1">
+                  <ul id="top_menu">
+                     <li><a href="#home">HOME</a></li>
+                     <li><a href="">STUDENT</a></li>
+                     <li><a href="">FACULTY</a></li>
+                     <li><a href="">DEPARTMENTS</a></li>
+                     <li><a href="">ABOUT US</a></li>
+                     <li id="log_in"><a href="">LOG IN</a></li>                   
+                  </ul>
+              </nav>
+           </div>
+           <h2 id="dept_title"><span>{{dept_obj.department_name}}</span></h2>
+           <div id="dept_dynamic">
+              <div id="dept_nav">
+                <h3 class="header">Quick Links</h3>
+                <div class="content">
+                  <ul class="menu">
+                    <li id="nav_link1"><a href=""></a></li>
+                    <li id="nav_link2"><a href="/"+{{dept_name1}} +"/chairman-message">Chairman's Message</a></li>
+                    <li id="nav_link3"><a href="/electronics-department">Faculty</a></li>
+                    <li id="nav_link4"><a href="">Labs</a></li>
+                    <li id="nav_link5"><a href="">Clubs</a></li>
+                    <li id="nav_link6"><a href="">Courses</a></li>
+                    <li id="nav_link7"><a href="">Contact Us</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+              <div id="links_content">
+                <section id="body_aboutus">
+                  <article class="page_aboutus">
+                     <header>
+                       <h1>About {{dept_obj.department_name}}</h1>
+                     
+                       <ul>
+                         <li>
+                           <a href="">Print,</a>
+                           <a href="">Email</a>
+                         </li>
+                       </ul>
+                     </header>
+                     <div id="dept_image">
+                       <img src="{% static 'admin/img/dept_image_demo.jpg' %}">
+                     </div>
+                     {% block about_dept %}                    
+                    {% endblock %}  
+                    {% block chairman-message %}
+                    {% endblock  %}                   
+                  </article>
+                </section>
+              </div>
+
+
+
+             
+           </div>
+
+      </header>
+<script type="text/javascript" src="feature.js"></script>
+</body>
+</html>

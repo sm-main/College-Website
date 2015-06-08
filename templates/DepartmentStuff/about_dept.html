@@ -1,0 +1,49 @@
+{% extends "department.html" %}
+{% load staticfiles %}
+
+{% block about_dept %}
+                 <div id="content_aboutus">
+                       <p>
+                         {{dept_obj.about_department|linebreaks}}
+                       </p>
+                     </div>
+                     <div id="dept_snapshot">
+                       <ul>
+                         <li></li>
+                         <li>
+                           <h3>Faculty Members</h3>
+                           <ul>
+                             <li>Total No of Faculty : {{dept_obj.stk.total_faculty_in_department }}</li>
+                             <li>No. of PHD's : {{dept_obj.stk.no_of_phd}}</li>
+                             <li>No. of M.TECH : {{dept_obj.stk.no_of_mtech}}</li>
+                             <li>Average Experience of Faculty : {{ dept_obj.stk.average_experience }} years</li>
+                           </ul>
+                         </li>
+                         <li>
+                           <h3> Number of Publications in Journal/ Conferences: (last 2 years )</h3>
+                           <ul>
+                             <li>Total : {{ dept_obj.stk.no_of_pub_in_journal }}</li>
+                           </ul>
+                         </li>
+                         <li>
+                           <h3>Number of Short term courses/ Faculty Development Programs attended: (last 2 years)</h3>
+                           <ul>
+                             <li>Total no. of STCs / FDPs : {{ dept_obj.stk.no_of_faculty_dev_programmes_attended }}</li>
+                           </ul>
+                         </li>
+                         <li>
+                           <h3> Departmental Facilities</h3>
+                           <ul>
+                             <li>Number of labs : {{dept_obj.stk.no_of_labs}}</li>
+                             <li>Lecture hall : {{dept_obj.stk.no_of_lecture_halls}}</li>
+                             <li>Departmental conference room : {{dept_obj.stk.no_of_confrence_rooms}}</li>
+                             <li>Departmental smart room : {{dept_obj.stk.no_of_smart_rooms}}</li>
+                             <li>Research Lab : {{dept_obj.stk.no_of_research_labs}}</li>
+                             <li>Internet connection : {{dept_obj.stk.internet_speed}}</li>
+                             <li>Media Projectors : {{dept_obj.stk.no_of_media_projectors}}</li>
+                           </ul>
+                         </li>
+                       </ul>
+                     </div>
+
+{% endblock %}

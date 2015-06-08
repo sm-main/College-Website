@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+      <meta charset="UTF-8">
+	    <title>{%block title%} YMCA University Of Science And Technology{% endblock %}</title>
+	    <link rel="icon" type="image/jpg" href="{% static 'admin/img/ymca_logo.jpg' %}">
+	    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/home.css' %}">
+	    <link rel="stylesheet" href="{% static 'admin/fonts/font-awesome/css/font-awesome.min.css' %}">
+	    <script type="text/javascript" src="{% static 'admin/js/jquery-2.1.3.js' %}"></script>
+</head>
+<body>
+      <header id="head_box">
+           <div id="header_top">  
+              <div id="logo_box"> 
+              <div id="logo">
+                  <a href="/home"><img  src="{% static 'admin/img/trans.png' %}" height="150" width="150"></a>
+              </div> 
+              </div>
+              <nav id="nav1">
+                  <ul id="top_menu">
+                     <li class=""><a href="#home">HOME</a>
+                         <div class="aboutDiv">
+                           
+                         </div>
+                     </li>
+                     <li class="mega_links"><a href="">ABOUT US</a><i class="fa fa-angle-down"></i>
+                         <div class="aboutDiv">
+                              <ul class="aboutCol">
+                                <li class="about1"><a href="/about-us">
+                                  <strong>THE UNIVERSITY</strong>
+                                </a></li>
+                                <li class="about2"><a href="">
+                                <strong>VC's MESSAGE</strong>
+
+                                </a>
+                                </li>
+                              </ul>
+                           
+                         </div>
+
+                     </li>
+                     <li><a href="">GOVERNANCE</a><i class="fa fa-angle-down"></i></li>
+                     <li><a href="">ADMINISTRATION</a></li>
+                     <li><a href=""></a></li>
+                     <li id="log_in"><a href="">LOG IN</a></li>                   
+                  </ul>
+              </nav>
+
+           </div>
+           <div id="header_middle">
+             <div id="vis_mis">
+
+              <h2 id="vis">
+                <strong>VISION:</strong><br>"YMCA University of Science and Technology aspires to be a nationally and internationally acclaimed leader in technical and higher education in all spheres which transforms the life of students through integration of teaching, research and character building "
+              </h2>
+              <h2 id="mis">
+                  <strong>MISSION:</strong>
+                  <ul>
+                     <li>
+                       To contribute to the development of science and technology by synthesizing teaching, research and creative activities.
+                     </li>
+                     <li>
+                       To provide an enviable research environment and state-of-the art technological exposure to its scholars.
+                     </li>
+                     <li>
+                       To develop human potential to its fullest extent and make them emerge as world class leaders in their professions and enthuse them towards their social responsibilities.
+                     </li>
+                  </ul>
+              </h2>
+             
+           </div>
+            <div id="link_box">
+              <div id="">
+                    <ul id="nav2">
+                        <li>
+                           <h3><a href="">Facilities</a></h3>
+                           <p>Facilities provided in the college campus</p>
+                        </li>
+                        <li>
+                          <h3><a href="">Library</a></h3>
+                          <p>Library in college campus</p>
+                        </li>
+                        <li>
+                          <h3><a href="">Rules And Circulars</a></h3>
+                          <p>Rules </p>
+                        </li>
+                        <li class="hide">
+                          <h3><a href="">Welfare</a></h3>
+                          <p></p>
+                        </li>
+                        <li class="hide">
+                          <h3><a href="">Resources</a></h3>
+                          <p></p>
+                        </li>
+                        <li class="hide">
+                          <h3><a href="">Quick Links</a></h3>
+                          <p></p>
+                        </li>
+                    </ul>
+                    <a id="show_next" href="#">more links</a>
+              </div>          
+             </div>
+           </div>
+           <div id="header_bottom">
+              <section id="notice_container">
+                <div id="notice_row">
+                 <div id="notice_main">
+                   <h2>
+                      Featured<br>
+                      <strong>NOTICES</strong>
+                   </h2>
+                   <p class="more">
+                     <a href="">More Notices <i class="fa fa-arrow-right "></i></a>
+                   </p>    
+                 </div> 
+                 {% for notice in notice_list1 %}
+                      <div class="notice_n">
+                        <h3 ><a href="">{{notice.notice_heading}}</a></h3>
+                        <p> published on :</p>
+                      </div>
+                  {% endfor %} 
+                  {% for notice in notice_list2 %}
+                      <div class="hide_n">
+                        <h3 ><a href="">{{notice.notice_heading}}</a></h3>
+                        <p> published on :</p>
+                      </div>
+                  {% endfor %}    
+                     
+
+                 <div class="controls">
+                   <a id="prev_butt" href=""></a>
+                   <br>
+                   <a id="next_butt" href=""></a>
+                 </div>
+
+                </div>   
+              </section>
+             
+           </div>
+
+        
+      </header>
+      <section id="middle">
+        <div id="two_box">
+         <div id="info_main">
+           <h3>One Of The Top University in NCR Region</h3>
+           <div id="info_sub">
+             <img src="{% static 'admin/img/students.jpg' %}">
+             <div id="info_mini">
+               <p>Ut imperdiet ipsum vel est congue, a vestibulum orci faucibus. Mauris dictum orci ornare arcu placerat, eu porta quam sollicitudin. Fusce in dapibus turpis. Curabitur imperdiet fermentum tellus.</p>
+               <p>Nunc suscipit magna vitae nisi blandit, lacinia pellentesque elit euismod. Quisque ut mattis dolor, a gravida  turpis.</p>
+               <a href="/about-us">More details...</a>
+             </div>
+           </div>
+         </div>
+         <div id="admis_box">
+           <div id="admis_menu">
+             <h3>ADMISSIONS</h3>
+             <div class="admis_content">
+               <ul>
+                  <li>
+                    <a href=""><i class="fa fa-graduation-cap">How To apply</i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa fa-calendar"></i> Deadlines</a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa fa-pie-chart"></i> Seat Matrix</a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa fa-map-marker"></i> Plan a Visit</a>
+                  </li>
+               </ul>
+             </div>
+           </div>
+        </div>
+      </section>
+      <section id="department">
+         <h3>DEPARTMENTS</h3>
+         <div id="dept_banner" >
+           <div class="viewport">
+             <a href="/computer-department">
+             <span class="dark-background">Computer Department <em>Computer Department</em></span>
+             <img src="{{comp_url}}" /></a>
+           </div>
+           <div class="viewport">
+             <a href="/electronics-department">
+             <span class="dark-background">Electronics Department <em>Electronics Department</em></span>
+             <img src="{{comp_url}}" /></a>
+           </div>
+           <div class="viewport">
+             <a href="/electrical-department">
+             <span class="dark-background">Electrical Department <em>Electrical Department</em></span>
+             <img src="{{comp_url}}" /></a>
+           </div>
+           <div class="viewport">
+             <a href="/mechanical-department">
+             <span class="dark-background">Mechanical Department <em></em></span>
+             <img src="{{comp_url}}" /></a>
+           </div>
+           <div class="viewport">
+             <a href="/humanities-department">
+             <span class="dark-background">Humanities Department <em></em></span>
+             <img src="{{comp_url}}" /></a>
+           </div>
+           <div class="viewport">
+             <a href="/buisnessandadministration-department">
+             <span class="dark-background">MBA Department <em></em></span>
+             <img src="{{comp_url}}" /></a>
+           </div>
+          
+         </div>  
+      </section>
+      <section id="stay_connected">
+         <div id="social_stuff">
+           <div id="social_cont">
+             <h3><span>STAY CONNECTED</span></h3>
+               <ul id="social_ul">
+                 <li class="social_li"><a href="http://www.facebook.com"><i class="fa fa-facebook fa-2x"></i></a></li>
+                 <li class="social_li"><a href="http://www.twitter.com"><i class="fa fa-twitter fa-2x"></i></a></li>
+                 <li class="social_li"><a href="http://https://plus.google.com"><i class="fa fa-google-plus fa-2x"></i></a></li>
+                 <li class="social_li"><a href="http://www.linkedin.com"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                 <li class="social_li"><a href="http://www.youtube.com"><i class="fa fa-youtube fa-2x"></i></a></li>
+               </ul>
+           </div>  
+         </div>
+         <div id="campus_life">
+           <h3>CAMPUS LIFE</h3>
+         </div>
+      </section>
+      <section id="latest_events">
+          {% for event in event_list %}
+            <div class="event_box">
+                 <span id="event_content">
+                   <h3>{{event.event_name}}</h3>
+                   <p>was held here</p>
+                   <a href="">Read More</a>
+                 </span>
+                 <img src="{{ event.event_photo.url}}">
+                 
+            </div>  
+          {% endfor %}    
+      </section>
+      <footer id="footer_links">
+         <div id="footer_box">
+             <div class="5boxes">
+               <h3>About University</h3>
+               <ul>
+                 <li><a href="">Legacy</a></li>
+                 <li><a href="">VC's Message</a></li>
+                 <li><a href="">Approvals & Awards</a></li>
+                 <li><a href="">Vision and Mission</a></li>
+                 <li><a href="">Incumbency Board</a></li>
+                 <li><a href="">University Act</a></li>
+                 <li><a href="">E-Brouchere</a></li>
+                 <li><a href="">About Haryana</a></li>
+                 <li><a href="">About Faridabad</a></li>
+
+               </ul>
+             </div>
+             <div class="5boxes">
+               <h3>Governance</h3>
+               <ul>
+                 <li><a href="">University Court</a></li>
+                 <li><a href="">Executive Council</a></li>
+                 <li><a href="">Academic Council</a></li>
+                 <li><a href="">Finance Committee</a></li>
+                 <li><a href="">Planning Board</a></li>
+                 <li><a href="">Establishment Committee</a></li>
+                 <li><a href="">Board of Faculty</a></li>
+                 <li><a href="">Board of Studies</a></li>
+               </ul>
+             </div>
+             <div class="5boxes">
+               <h3>Administration</h3>
+               <ul>
+                 <li><a href="">Officers</a></li>
+                 <li><a href="">Deans</a></li>
+                 <li><a href="">Chairpersons</a></li>
+                 <li><a href="">Offices</a></li> 
+               </ul>
+             </div>
+             <div class="5boxes">
+                <h3>Examination</h3>
+                <ul>
+                 <li><a href="">Results</a></li>
+                 <li><a href="">COE office</a></li>
+                 <li><a href="">COE</a></li>
+                 <li><a href="">Forms</a></li>
+
+                  
+                </ul>
+             </div>
+             <div class="5boxes">
+               <h3>Admissions</h3>
+               <ul>
+                 <li><a href="">Courses</a></li>
+                 <li><a href="">Admission Info</a></li>
+               </ul>
+             </div>
+           
+         </div>
+          
+      </footer>
+	<script type="text/javascript" src="{% static 'admin/js/home.js' %}"></script> 
+</body>
+</html>
