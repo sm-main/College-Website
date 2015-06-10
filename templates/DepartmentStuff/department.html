@@ -35,8 +35,8 @@
                 <div class="content">
                   <ul class="menu">
                     <li id="nav_link1"><a href=""></a></li>
-                    <li id="nav_link2"><a href="/"+{{dept_name1}} +"/chairman-message">Chairman's Message</a></li>
-                    <li id="nav_link3"><a href="/electronics-department">Faculty</a></li>
+                    <li id="nav_link2"><a href="{% url 'chairman-msg' dept_obj.department_name %}">Chairman's Message</a></li>
+                    <li id="nav_link3"><a href="{% url 'faculty' dept_obj.department_name  %}">Faculty</a></li>
                     <li id="nav_link4"><a href="">Labs</a></li>
                     <li id="nav_link5"><a href="">Clubs</a></li>
                     <li id="nav_link6"><a href="">Courses</a></li>
@@ -61,10 +61,14 @@
                      <div id="dept_image">
                        <img src="{% static 'admin/img/dept_image_demo.jpg' %}">
                      </div>
-                     {% block about_dept %}                    
+                    {% block about_dept %}                    
                     {% endblock %}  
                     {% block chairman-message %}
-                    {% endblock  %}                   
+                    {% endblock  %}   
+                    {% block faculty %}
+                    {% endblock %}    
+                    {% block faculty_detail %}
+                    {% endblock %}            
                   </article>
                 </section>
               </div>

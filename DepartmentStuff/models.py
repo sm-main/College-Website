@@ -2,12 +2,12 @@ from django.db import models
 
 class Department(models.Model):
 	DEPARTMENT_LIST=(
-		('Computer Department','Computer Department'),
-		('Mechanical Department','Mechanical Department'),
-		('Electrical Department','Electrical Department'),
-		('Electronics Department','Electronics Department'),
-		('MBA Department','MBA Department'),	
-		('H&S Department','Humanities Department')
+		('computer-department','computer-department'),
+		('mechanical-department','mechanical-department'),
+		('electrical-department','electrical-department'),
+		('electronics-department','electronics-department'),
+		('MBA Department','mba-department'),	
+		('H&S Department','humanities-department')
 		)
 	department_name=models.CharField(max_length=23,choices=DEPARTMENT_LIST,null=False)
 	about_department=models.TextField(null=True)
@@ -39,7 +39,7 @@ class Departmental_snapshot(models.Model):
 
 
 class Faculty(models.Model):
-	department=models.ForeignKey(Department)
+	department=models.ForeignKey(Department,related_name='fac')
 	faculty_photo=models.ImageField(upload_to='DepatrmentStuff/faculty_uploads/images')#PENDING........................
 	faculty_name=models.CharField(max_length=300)
 	faculty_qualification=models.CharField(max_length=1000)
@@ -49,7 +49,7 @@ class Faculty(models.Model):
 	faculty_research_papers=models.TextField()
 	faculty_experience=models.TextField()
 	def __str__(self):
-		return faculty_name
+		return self.faculty_name
 	class Meta:
 		verbose_name_plural="Faculties"
 

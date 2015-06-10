@@ -1,0 +1,15 @@
+{% extends "DepartmentStuff/department.html" %}
+{% block faculty %}
+	<h1>FACULTY</h1>
+	<div>
+		{% for faculty in faculty_list %}
+			<div>
+				<img src="{{ faculty.faculty_photo.url }}">
+				<a href="{% url 'faculty-detail' dept_obj.department_name %}">{{ faculty.faculty_name }}</a>
+				
+			</div>
+		{% endfor %}
+
+	</div>
+{% endblock %}	
+  

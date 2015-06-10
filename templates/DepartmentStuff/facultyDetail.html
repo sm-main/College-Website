@@ -1,0 +1,17 @@
+{% extends 'DepartmentStuff/department.html' %}
+{% block faculty_detail %}
+	{% for faculty in faculty_list %}
+		<div>
+			<img src="{{ faculty.faculty_photo.url }}">
+			<p>{{ faculty.faculty_name }}</p>
+			<p>{{ faculty.faculty_qualification }}</p>
+			<p>{{ faculty.faculty_designation }}</p>
+			<p>{{ faculty.faculty_address }}</p>
+			<p>{{ faculty.faculty_email }}</p>
+			<p>{{ faculty.faculty_reserch_papers }}</p>
+			<p>{{ faculty.faculty_experience }}</p>
+
+		</div>
+	{% endfor %}	
+
+{%  endblock %}
